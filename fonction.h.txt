@@ -1,0 +1,60 @@
+typedef struct 
+{
+SDL_Surface *img;
+SDL_Surface *img_2;
+SDL_Surface *img_3;
+SDL_Surface *img_4;
+SDL_Rect postion;
+int vitesse;
+}Personne;
+typedef struct
+{
+SDL_Suface *img;
+SDL_Surface *img_2;
+SDL_Surface *img_3;
+SDL_Surface *img_4;
+SDL_Rect postion;
+}Ennemi;
+typedef struct
+{
+SDL_Surface *img;
+SDL_Rect postion;
+}Background;
+typdef struct
+{
+SDL_Surface *img;
+SDL_Surface *img_2;
+SDL_Surface *img_3;
+SDL_Rect postion;
+}minimap;
+typedef struct
+{
+SDL_Surface *img;
+SDL_Rect postion;
+int reponse;
+}enigme;
+void init (Personne * p, int numperso);
+void initPerso(Personne *p);
+void afficherPerso(Personne p, SDL_Surface * screen);
+void deplacerPerso (Personne *p);
+void animerPerso (Personne* p);
+void saut (Personne* p) ;
+void initEnnemi(Ennemi*e);
+void afficherEnnemi(Ennemi e, SDL_Surface * screen);
+void animerEnnemi( Ennemi * e);
+void deplacer( Ennemi * e);
+int collisionBB( personne p, Ennemi e);
+void deplacerIA( Ennemi * e);
+void initBack(Background * b);
+void aficherBack(Background b, SDL_Surface * screen);
+void scrolling (background * b, int direction ); 
+init map( minimap * m); 
+void affichertemps (int * temps); 
+int collisionPP( Personne p, SDL_Surface * Masque);
+int IA(Grille g, int Joueur_Programme);
+void afficherEnigme(enigme e, SDL_Surface * screen);
+void genererEnigme(enigme * e, char *nomfichier);
+void sauvegarder (personne p, background b, char * nomfichier) ;
+enigme generer();
+void afficherEnigme(enigme e, SDL_Surface * screen);
+
